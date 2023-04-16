@@ -16,3 +16,13 @@ if (navClose) {
         navMenu.classList.remove('show-menu');
     });
 }
+
+// logic to remove menubar when any link is clicked in mobile devices
+const navLink = document.querySelectorAll('.nav__link');
+function linkAction() {
+    const navMenu = document.getElementById('nav-menu');
+    // Whenever navLink button is clicked it will remove show-menu class
+    // 
+    navMenu.classList.remove('show-menu');
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
