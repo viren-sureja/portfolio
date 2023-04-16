@@ -444,6 +444,23 @@ img {
 .skills__python {
     width: 80%;
 }
+.skills__close .skills__list {
+    height: 0;
+    overflow: hidden;
+}
+.skills__open {
+    height: max-content;
+    margin-bottom: var(--mb-2-5);
+}
+
+/* =================
+This CSS code snippet is selecting an element with the class name "skills__arrow" that is a child of an element with the class name "skills__open", and applying a transformation to it using the "transform" property.
+
+The transformation being applied is a 180-degree rotation in the clockwise direction, which will cause the arrow to point in the opposite direction.
+================= */
+.skills__open .skills__arrow {
+    transform: rotate(-180deg);
+}
 
 /* qualification */
 
