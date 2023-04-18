@@ -134,7 +134,7 @@ img {
 
 /* LAYOUT */
 .container {
-    border: 1px dotted black;
+    border: 2px solid blue;
     max-width: 768px;
     margin-left: var(--mb-1-5);
     margin-right: var(--mb-1-5);
@@ -330,6 +330,19 @@ img {
     align-items: center;
 }
 
+.button--small {
+    padding: 0.75rem 1rem;
+}
+.button--link {
+    padding: 0;
+    background-color: transparent;
+    color: var(--first-color);
+}
+.button--link:hover {
+    background-color: transparent;
+    color: var(--first-color-alt);
+}
+
 /* ABOUT */
 .about__img {
     width: 200px;
@@ -453,18 +466,112 @@ img {
     margin-bottom: var(--mb-2-5);
 }
 
-/* =================
+/* =======TIP==========
 This CSS code snippet is selecting an element with the class name "skills__arrow" that is a child of an element with the class name "skills__open", and applying a transformation to it using the "transform" property.
 
 The transformation being applied is a 180-degree rotation in the clockwise direction, which will cause the arrow to point in the opposite direction.
-================= */
+======================= */
 .skills__open .skills__arrow {
     transform: rotate(-180deg);
 }
 
 /* qualification */
+.qualification__tabs {
+    border: 1px dotted black;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2);
+}
+.qualification__button {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+}
+.qualification__button:hover {
+    color: var(--first-color);
+}
+.qualification__icon {
+    font-size: 1.8rem;
+    margin-right: 0-var(--mb-0-25);
+}
+.qualification__data {
+    display: grid;
+    /*  this CSS property will create a grid with three columns, where the second column will have a width equal to the maximum width of its content, and the first and third columns will share the remaining space equally. */
+    grid-template-columns: 1fr max-content 1fr;
+    column-gap: 1.5rem;
+}
+.qualification__title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+.qualification__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+}
+.qualification__calendar {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+}
+.qualification__rounder {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+}
+.qualification__line {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: var(--first-color);
+    transform: translate(6px, -7px);
+}
+.qualification [data-content] {
+    display: none;
+}
+.qualification__active[data-content] {
+    display: block;
+}
+
+.qualification__button.qualification__active {
+    color: var(--first-color);
+}
 
 /* services */
+.services__container {
+    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+.services__content {
+    position: relative;
+    background-color: var(--container-color);
+    padding: 3.5rem 0.5rem 1.25rem 1.5rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+.services__content:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.services__icon {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--first-color);
+    margin-bottom: var(--mb-1);
+}
+.services__title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+    font-weight: var(--font-medium);
+}
+.services__button {
+    cursor: pointer;
+    font-size: var(--small-font-size);
+}
+.services__button:hover .button__icon {
+    transform: translateX(0.25rem);
+}
 
 /* active modal */
 

@@ -1,22 +1,19 @@
-// Menu bar show/hide logic
+// SHOW/HIDE NAVBAR
 const navMenu = document.getElementById('nav-menu'),
     navToggle = document.getElementById('nav-toggle'),
     navClose = document.getElementById('nav-close');
-
-// Logic to show menu
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
     });
 }
-// Logic to hide menu
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
     });
 }
 
-// logic to remove menubar when any link is clicked in mobile devices
+// HIDE NAVBAR WHEN ANY LINK IS CLICKED IN MOBILE DEVICES
 const navLink = document.querySelectorAll('.nav__link');
 function linkAction() {
     const navMenu = document.getElementById('nav-menu');
@@ -26,17 +23,14 @@ function linkAction() {
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
-// Logic to handle open or close skills
+// SHOW/HIDE SKILLS
 const skillsContent = document.getElementsByClassName('skills__content'),
     skillsHeader = document.querySelectorAll('.skills__header');
-console.log(skillsContent);
-console.log(skillsHeader);
 function toggleSkills() {
     let itemClass = this.parentNode.className;
     // close all the skills section first
     for (i = 0; i < skillsContent.length; i++) {
         skillsContent[i].className = 'skills__content skills__close';
-        console.log(skillsContent[i]);
     }
     // Open the one which triggered this function, would
     if (itemClass === 'skills__content skills__close') {
@@ -45,4 +39,22 @@ function toggleSkills() {
 }
 skillsHeader.forEach(el => {
     el.addEventListener('click', toggleSkills);
+});
+
+// TOGGLE EDUCATION AND WORK
+const tabs = document.querySelectorAll('[data-target]'),
+    tabContents = document.querySelectorAll('[data-content]');
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target);
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification__active');
+        });
+        // add class to the target our tab is pointing to
+        target.classList.add('qualification__active');
+        tabs.forEach(tab => {
+            tab.classList.remove('qualification__active');
+        });
+        tab.classList.add('qualification__active');
+    });
 });
