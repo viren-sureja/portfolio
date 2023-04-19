@@ -11,6 +11,11 @@
             href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
         />
         <!-- swiper css -->
+        <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css" /> -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        />
         <!-- css -->
         <link rel="stylesheet" href="css/styles.css" />
         <title>Responsive portfolio website</title>
@@ -126,7 +131,7 @@
                                         class="home__blob-img"
                                         x="-210"
                                         y="-210"
-                                        xlink:href="./assets/profile.jpg"
+                                        xlink:href="./assets/img/perfill.jpg"
                                     />
                                 </g>
                             </svg>
@@ -166,7 +171,7 @@
                 <span class="section__subtitle">My introduction</span>
 
                 <div class="about__container container grid">
-                    <img src="assets/profile.jpg" alt="" class="about__img" />
+                    <img src="assets/img/profile.jpg" alt="" class="about__img" />
                     <div class="about__data">
                         <p class="about__description">
                             Lorem ipsum dolor sit amet consectetur, adipisicing
@@ -650,6 +655,7 @@
                                     class="uil uil-times services__modal-close"
                                 ></i>
                                 <ul class="services__modal-services grid">
+                                    <!-- mention the list of facilities provided in this service -->
                                     <li class="services__modal-service">
                                         <i
                                             class="uil uil-check-circle services__modal-icon"
@@ -788,11 +794,117 @@
                     </div>
                 </div>
             </section>
+
+            <!-- portfolio -->
+            <section class="portfolio section" id="portfolio">
+                <h2 class="section__title">Portfolio</h2>
+                <span class="section__subtitle">Most recent work</span>
+                <div class="portfolio__container container swiper mySwiper">
+                    <!-- <div class="swiper-wrapper"> -->
+                    <div class="swiper-wrapper">
+                        <!-- portfolio 1 -->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img
+                                src="assets/img/portfolio1.jpg"
+                                alt=""
+                                class="portfolio__img"
+                            />
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Modern website</h3>
+                                <p class="portfolio__description">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Blanditiis pariatur
+                                    eveniet iusto, error optio reprehenderit
+                                    quos quasi fugiat, quis maiores mollitia at
+                                    hic nostrum iure necessitatibus? Rem ratione
+                                    cum nesciunt!
+                                </p>
+                                <a
+                                    href="#"
+                                    class="button button--flex button--small portfolio__button"
+                                    >Demo
+                                    <i
+                                        class="uil uil-arrow-right button__icon"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                        <!-- portfolio 2 -->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img src="" alt="" /><img
+                                src="assets/img/portfolio2.jpg"
+                                alt=""
+                                class="portfolio__img"
+                            />
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Modern website</h3>
+                                <p class="portfolio__description">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Blanditiis pariatur
+                                    eveniet iusto, error optio reprehenderit
+                                    quos quasi fugiat, quis maiores mollitia at
+                                    hic nostrum iure necessitatibus? Rem ratione
+                                    cum nesciunt!
+                                </p>
+                                <a
+                                    href="#"
+                                    class="button button--flex button--small portfolio__button"
+                                    >Demo
+                                    <i
+                                        class="uil uil-arrow-right button__icon"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                        <!-- portfolio 3 -->
+                        <div class="portfolio__content grid swiper-slide">
+                            <img
+                                src="assets/img/portfolio3.jpg"
+                                alt=""
+                                class="portfolio__img"
+                            />
+                            <div class="portfolio__data">
+                                <h3 class="portfolio__title">Modern website</h3>
+                                <p class="portfolio__description">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Blanditiis pariatur
+                                    eveniet iusto, error optio reprehenderit
+                                    quos quasi fugiat, quis maiores mollitia at
+                                    hic nostrum iure necessitatibus? Rem ratione
+                                    cum nesciunt!
+                                </p>
+                                <a
+                                    href="#"
+                                    class="button button--flex button--small portfolio__button"
+                                    >Demo
+                                    <i
+                                        class="uil uil-arrow-right button__icon"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- arrows -->
+                    <div class="swiper-button-next">
+                        <i
+                            class="uil uil-angle-right swiper-portfolio-icon"
+                        ></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="uil uil-angle-left swiper-portfolio-icon"></i>
+                    </div>
+                    <!-- paginatation -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
         </main>
+        <div></div>
 
         <!-- footer -->
         <!-- scroll top -->
         <!-- swiper js -->
+        <!-- <script src="js/swiper-bundle.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
         <!-- main js -->
         <script src="js/main.js"></script>
     </body>
