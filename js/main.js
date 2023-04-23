@@ -110,3 +110,75 @@ let testimonialSwiper = new Swiper('.testimonial__container', {
         },
     },
 });
+
+// scroll sections active links
+// This line selects all the section elements on the page that have an id attribute, and stores them in a variable called sections.
+const sections = document.querySelectorAll('section[id]');
+function scrollActive() {
+    // vertical scroll position
+    const scrollY = window.pageYOffset;
+    sections.forEach(current => {
+        // offsetHeight height given to the current section
+        const sectionHeight = current.offsetHeight;
+        // offsetTop means sum of height of the sections above this current section
+        const sectionTop = current.offsetTop - 50;
+        let sectionId = current.getAttribute('id');
+        // These lines check whether the current section is visible on the screen (i.e., whether the user has scrolled past it). If it is visible, it adds the active-link class to the corresponding navigation menu item. If it is not visible, it removes the active-link class.
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document
+                .querySelector('.nav__menu a[href*=' + sectionId + ']')
+                .classList.add('active-link');
+        } else {
+            document
+                .querySelector('.nav__menu a[href*=' + sectionId + ']')
+                .classList.remove('active-link');
+        }
+    });
+}
+window.addEventListener('scroll', scrollActive);
+
+// change background header
+function scrollHeader() {
+    const nav = document.getElementById('header');
+    if (this.scrollY >= 80) nav.classList.add('scroll-header');
+    else nav.classList.remove('scroll-header');
+}
+window.addEventListener('scroll', scrollHeader);
+
+// show scroll up
+function scrollUp() {
+    const scrollUp = document.getElementById('scroll-up');
+    if (this.scrollY >= 560) scrollUp.classList.add('show-scroll');
+    else scrollUp.classList.remove('show-scroll');
+}
+window.addEventListener('scroll', scrollUp);
+
+// Dark light theme
+const themeButton = document.getElementById('theme-button');
+const darkTheme = 'dark-theme';
+const iconTheme = 'uil-sun';
+// previously selected topic
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+// we obtain the current theme that interface has by validating the dark-theme class
+const getCurrentTheme = () =>
+    document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () =>
+    themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
+
+// If dark theme is selected and refreshed still it will show dark theme.
+if (selectedTheme) {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
+        darkTheme
+    );
+    themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](
+        iconTheme
+    );
+}
+themeButton.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+
+    localStorage.setItem('selected-theme', getCurrentTheme());
+    localStorage.setItem('selected-icon', getCurrentIcon());
+});
